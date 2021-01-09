@@ -1,0 +1,115 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+       
+        .all
+        {
+            background-color:green;
+            border-radius: 0% 50% 50% 0% / 0% 50% 50% 0%;
+            position: relative;
+            bottom: 20px;
+            left: 1px;
+            text-align: left;
+            color: white;
+            float: left;
+                
+        }
+       
+        .auto-style1 {
+            width: 454px;
+            text-align: center;
+        }
+       
+        .auto-style2 {
+            text-align: center;
+        }
+        .auto-style3 {
+            margin-left: 0px;
+        }
+       
+    </style>
+</head>
+<body style ="background-color:#242424">
+    <form id="form1" runat="server">
+         <div>
+
+             <table style="margin:0 auto; background-color: white">
+                 <tr>
+                     <td style="width:79px; background-color: #FFFFFF">
+                         <asp:Image ID="Image1" runat="server" Height="66px" ImageUrl="~/images/happyshop.jpg" Width="79px" />
+                     </td>
+                     <td class="auto-style1" style="background-color: #FFFFFF;" colspan="2">
+                         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="Blue" Text="ONLINE SHOPPING.."></asp:Label>
+                     </td>
+                     <td class="auto-style3" style="background-color: #FFFFFF;">
+                         <asp:ImageButton ID="ImageButton1" runat="server" Height="45px" ImageUrl="~/images/facebook.jpg" Width="41px" />
+&nbsp;<asp:ImageButton ID="ImageButton2" runat="server" Height="44px" ImageUrl="~/images/twitter.png" Width="38px" />
+&nbsp;<asp:ImageButton ID="ImageButton3" runat="server" Height="42px" ImageUrl="~/images/insta.png" Width="38px" />
+&nbsp;<asp:ImageButton ID="ImageButton4" runat="server" Height="41px" ImageUrl="~/images/cart.png" Width="41px" />
+                     </td>
+                 </tr>
+                 <tr>
+                     <td colspan="2"style="background-color: #0000FF">
+                     <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                        <Items>
+                            <asp:MenuItem Text="Home" Value="Home"></asp:MenuItem>
+                            <asp:MenuItem Text="Register" Value="Register"></asp:MenuItem>
+                            <asp:MenuItem Text="Login" Value="Login"></asp:MenuItem>
+                            <asp:MenuItem Text="About Us" Value="About Us"></asp:MenuItem>
+                        </Items>
+                        
+                        <StaticHoverStyle BorderStyle="Outset" ForeColor="White" />
+                        <StaticMenuItemStyle Font-Bold="True" Font-Size="Large" ForeColor="White" HorizontalPadding="20px" />
+                        <StaticSelectedStyle BorderStyle="Inset" ForeColor="Black" />
+                        
+                    </asp:Menu>
+                         </td>
+                     <td colspan="2"style="background-color: #0000FF">
+                         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" BackColor="Blue" ForeColor="White">
+                             <asp:ListItem>Product Category</asp:ListItem>
+                             <asp:ListItem>Electronics</asp:ListItem>
+                             <asp:ListItem>Home and Kitchen</asp:ListItem>
+                         </asp:DropDownList>
+                         </td>
+                 </tr>
+                 <tr>
+                     <td colspan="4" class="auto-style2" style="background-color: #FFFFFF">&nbsp;</td>
+                 </tr>
+                 <tr>
+                     <td colspan="4">
+                         <asp:ScriptManager ID="ScriptManager1" runat="server">
+                         </asp:ScriptManager>
+                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                             <ContentTemplate>
+                                 <asp:Timer ID="Timer1" runat="server" Interval="2000" OnTick="Timer1_Tick1">
+                                 </asp:Timer>
+                                 <asp:Image ID="Image2" runat="server" Height="147px" Width="830px" />
+                             </ContentTemplate>
+                         </asp:UpdatePanel>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td colspan="4">
+                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                         </asp:ContentPlaceHolder>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td colspan="4" style="background-color: #000000; text-align: center; color: #FFFFFF;">
+                    &copy; Online Shopping Center Pvt. | All rights Reserved. 2020
+                     </td>
+                 </tr>
+             </table>
+
+         </div>
+    </form>
+   
+</body>
+</html>
